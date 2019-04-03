@@ -11,18 +11,16 @@ const Wrapper = styled.main`
 
 class Main extends Component {
   handleClick() {
-    let oxford = axios.create({
-      headers: {
-        app_id: `${process.env.REACT_APP_OXFORD_API_USER}`,
-        app_key: `${process.env.REACT_APP_OXFORD_API_KEY}`
-      }
-    });
+    // let oxford = axios.create({
+    //   headers: {
+    //     app_id: `${process.env.REACT_APP_OXFORD_API_USER}`,
+    //     app_key: `${process.env.REACT_APP_OXFORD_API_KEY}`
+    //   }
+    // });
     // make api call
     console.log("making api call");
-    oxford
-      .get(
-        "https://od-api.oxforddictionaries.com/api/v1/entries/en/ace/regions=us"
-      )
+    axios
+      .get("/api/words")
       .then(function(response) {
         // handle success
         console.log(response);
