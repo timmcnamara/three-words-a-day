@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { dark } from "../styles/styleGuide";
 
-// Change the name of the styled component?
 const Btn = styled.button`
   background: white;
   color: ${dark};
@@ -15,11 +14,13 @@ const Btn = styled.button`
   text-transform: uppercase;
 `;
 
-// Or the name of the component?
-const Button = props => <Btn>{props.title}</Btn>;
+const Button = ({ text, onClick }) => {
+  return <Btn onClick={onClick}>{text}</Btn>;
+};
 
 Button.propTypes = {
-  title: PropTypes.string
+  text: PropTypes.string,
+  onClick: PropTypes.func
 };
 
 export default Button;
