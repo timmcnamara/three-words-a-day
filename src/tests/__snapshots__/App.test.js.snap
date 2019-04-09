@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render App component 1`] = `
+<DocumentFragment>
+  <header
+    class="sc-bwzfXH fBgnyo"
+  >
+    <svg
+      class="sc-bdVaJa irjXTH"
+      viewBox="0 0 20 20"
+    >
+      <path
+        d="M10 15h8c1 0 2-1 2-2V3c0-1-1-2-2-2H2C1 1 0 2 0 3v10c0 1 1 2 2 2h4v4l4-4zM5 7h2v2H5V7zm4 0h2v2H9V7zm4 0h2v2h-2V7z"
+      />
+    </svg>
+  </header>
+  <main
+    class="sc-EHOje ATtKl"
+  >
+    <h1
+      class="sc-htpNat kwIifV"
+    >
+      Search for words
+    </h1>
+    <input
+      aria-label="input"
+      class="sc-ifAKCX cNKjnD"
+      placeholder="Enter any word"
+    />
+    <button
+      class="sc-bxivhb jwQWxb"
+      data-testid="button-global"
+    >
+      Get it
+    </button>
+  </main>
+</DocumentFragment>
+`;

@@ -7,6 +7,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(pino);
 
 app.get("/api/words", (req, res) => {
+  // add api call to oxford here..
   const name = req.query.name || "World";
   res.setHeader("Content-Type", "application/json");
   res.send(JSON.stringify({ greeting: `Hello ${name}!` }));

@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import { dark, light } from "../styles/styleGuide";
+import LogoSvg from "./LogoSvg";
 
 const Nav = styled.header`
-  background: ${dark};
-  color: ${light};
+  background: ${props => (props.darkTheme ? dark : light)};
+  color: ${props => (props.darkTheme ? light : dark)};
   display: flex;
   height: 100px;
   align-items: center;
@@ -12,14 +13,10 @@ const Nav = styled.header`
   letter-spacing: 1px;
   padding-left: 20px;
 `;
-const Title = styled.h1`
-  font-size: 1em;
-  color: ${light};
-`;
 
 const Header = () => (
-  <Nav>
-    <Title>Three Words A Day</Title>
+  <Nav darkTheme>
+    <LogoSvg />
   </Nav>
 );
 

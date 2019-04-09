@@ -1,13 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { dark } from "../styles/styleGuide";
+import { dark, light } from "../styles/styleGuide";
 
 const Btn = styled.button`
-  background: white;
-  color: ${dark};
+  background: ${dark};
+  color: ${light};
   font-size: 1em;
-  margin: 1em;
+  font-weight: 700;
+  margin: 10px;
   padding: 0.75em 2em;
   border: 2px solid ${dark};
   border-radius: 3px;
@@ -15,7 +16,11 @@ const Btn = styled.button`
 `;
 
 const Button = ({ text, onClick }) => {
-  return <Btn onClick={onClick}>{text}</Btn>;
+  return (
+    <Btn data-testid="button-global" onClick={onClick}>
+      {text}
+    </Btn>
+  );
 };
 
 Button.propTypes = {

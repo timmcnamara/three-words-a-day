@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render SearchContainer component 1`] = `
+<DocumentFragment>
+  <input
+    aria-label="input"
+    class="sc-bwzfXH eCMyJy"
+    placeholder="Enter any word"
+  />
+  <button
+    class="sc-bdVaJa ljraLK"
+    data-testid="button-global"
+  >
+    Get it
+  </button>
+</DocumentFragment>
+`;

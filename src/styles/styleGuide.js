@@ -1,7 +1,7 @@
 // Colors
 
 export const dark = "#0b1832";
-export const light = "#FFCEBF";
+export const light = "#CCE7BB";
 
 // Fonts
 
