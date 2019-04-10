@@ -33,7 +33,7 @@ app.get("/api/words", (req, res) => {
     )
     .then(response => {
       res.setHeader("Content-Type", "application/json");
-      res.json(response.data);
+      res.json(response.data.results[0].lexicalEntries[0].sentences[0].text);
     })
     .catch(err => console.log("**", err));
 });

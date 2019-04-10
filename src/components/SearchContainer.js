@@ -4,30 +4,56 @@ import TextInput from "./TextInput";
 import axios from "axios";
 
 class SearchContainer extends React.Component {
-  handleClick(e) {
-    e.preventDefault();
-    // make call to api
-    // send a param along to request the word
-    console.log("Submitting....");
-    axios
-      .get("http://localhost:3001/api/words", {
-        params: {
-          word: "car"
-        }
-      })
-      .then(data => console.log(data))
-      .catch(err => console.log(err));
+  constructor(props) {
+    super(props);
+    this.state = {
+      word: "",
+      results: []
+    };
+
+    // Bind Events
+    this.handleClick = this.handleClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
-  onChange(e) {
+  // Events
+  handleClick(e) {
     e.preventDefault();
-    console.log("change detected");
+    this.getDefinition();
   }
+
+  handleChange(e) {
+    e.preventDefault();
+    this.setState({ word: e.target.value.trim() });
+  }
+
+  handleKeyDown(e) {
+    if (e.key === "Enter") {
+      this.getDefinition();
+    }
+  }
+
+  // Helper Methods
+  getDefinition = async () => {
+    let res = await axios.get("http://localhost:3001/api/words", {
+      params: {
+        word: this.state.word
+      }
+    });
+    this.setState({
+      results: res.data
+    });
+  };
 
   render() {
     return (
       <React.Fragment>
-        <TextInput placeholder="Enter any word" onChange={this.onChange} />
+        <TextInput
+          placeholder="Enter any word"
+          onChange={this.handleChange}
+          onKeyDown={this.handleKeyDown}
+        />
         <Button onClick={this.handleClick} text="Get it" />
       </React.Fragment>
     );

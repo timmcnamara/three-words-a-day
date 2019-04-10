@@ -14,19 +14,21 @@ const InputStyled = styled.input`
   min-width: 250px;
 `;
 
-const TextInput = ({ placeholder, onChange }) => {
+const TextInput = ({ placeholder, onChange, onKeyDown }) => {
   return (
     <InputStyled
       aria-label="input"
       placeholder={placeholder}
       onChange={onChange}
+      onKeyPress={onKeyDown}
     />
   );
 };
 
 TextInput.propTypes = {
   placeholder: PropTypes.string,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
+  onKeyDown: PropTypes.func
 };
 
 export default TextInput;
