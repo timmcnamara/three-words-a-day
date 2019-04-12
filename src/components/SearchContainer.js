@@ -20,7 +20,7 @@ class SearchContainer extends React.Component {
   // Events
   handleClick(e) {
     e.preventDefault();
-    this.getDefinition();
+    this.fetchDefinition();
   }
 
   handleChange(e) {
@@ -28,9 +28,10 @@ class SearchContainer extends React.Component {
     this.setState({ word: e.target.value.trim() });
   }
 
+  // not required if you form tags in JSX
   handleKeyDown(e) {
     if (e.key === "Enter") {
-      this.getDefinition();
+      this.fetchDefinition();
     }
   }
 

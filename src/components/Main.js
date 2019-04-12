@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Headline from "./Headline";
 import SeachContainer from "./SearchContainer";
 import styled from "styled-components";
+import List from "./List";
 
 const Wrapper = styled.main`
   padding: 50px;
@@ -15,6 +16,7 @@ class Main extends Component {
       <Wrapper>
         <Headline title="Search for words" />
         <SeachContainer />
+        <List />
       </Wrapper>
     );
   }
