@@ -20,7 +20,7 @@ exports[`render App component 1`] = `
     <h1
       class="sc-htpNat kwIifV"
     >
-      Search for words
+      Make a sentence with any word...
     </h1>
     <input
       aria-label="input"
@@ -31,8 +31,9 @@ exports[`render App component 1`] = `
       class="sc-bxivhb jwQWxb"
       data-testid="button-global"
     >
-      Get it
+      Show
     </button>
+    <h1 />
   </main>
 </DocumentFragment>
 `;

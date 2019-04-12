@@ -14,7 +14,7 @@ class Main extends Component {
   render() {
     return (
       <Wrapper>
-        <Headline title="Search for words" />
+        <Headline title="Make a sentence with any word..." />
         <SeachContainer />
         <List />
       </Wrapper>

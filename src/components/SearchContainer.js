@@ -13,7 +13,7 @@ const SearchContainer = () => {
             onChange={context.handleChange}
             onKeyDown={context.handleKeyDown}
           />
-          <Button onClick={context.handleClick} text="Get it" />
+          <Button onClick={context.handleClick} text="Show" />
         </React.Fragment>
       )}
     </ApiConsumer>

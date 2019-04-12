@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 // Default State
 export const data = {
-  name: "",
-  updateName: () => {}
+  word: "xxx",
+  results: []
 };
 
 // Create Context
@@ -21,9 +21,6 @@ class ApiProvider extends Component {
       word: "",
       results: []
     };
-
-    //this.updateName = this.updateName.bind(this);
-    //this.fetchDefinition = this.fetchDefinition.bind(this);
 
     // Bind Events
     this.handleClick = this.handleClick.bind(this);
@@ -60,11 +57,6 @@ class ApiProvider extends Component {
       results: res.data
     });
   };
-
-  updateName() {
-    console.log("callued update name from Store");
-    this.setState({ name: "charlie" });
-  }
 
   render() {
     return (
