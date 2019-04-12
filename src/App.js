@@ -1,14 +1,21 @@
 import React, { Component } from "react";
 import Header from "./components/Header";
 import Main from "./components/Main";
+import ApiProvider from "./context/ApiContext";
 
 class App extends Component {
+  constructor(props) {
+    super();
+  }
+
   render() {
     return (
-      <React.Fragment>
-        <Header/>
-        <Main />
-      </React.Fragment>
+      <ApiProvider>
+        <React.Fragment>
+          <Header />
+          <Main />
+        </React.Fragment>
+      </ApiProvider>
     );
   }
 }

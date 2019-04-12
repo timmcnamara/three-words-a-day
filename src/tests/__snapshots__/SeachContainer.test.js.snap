@@ -11,7 +11,7 @@ exports[`render SearchContainer component 1`] = `
     class="sc-bdVaJa ljraLK"
     data-testid="button-global"
   >
-    Get it
+    Show
   </button>
 </DocumentFragment>
 `;
