@@ -6,8 +6,7 @@ const List = () => {
     <ApiConsumer>
       {context => (
         <React.Fragment>
-          <h1>{context.name}</h1>
-          <button onClick={context.updateName}>click me</button>
+          <h1>{context.results}</h1>
         </React.Fragment>
       )}
     </ApiConsumer>
