@@ -1,16 +1,22 @@
 import React from "react";
 import { ApiConsumer } from "../context/ApiContext";
+import styled from "styled-components";
 
-const List = () => {
+const Div = styled.div`
+  display: block;
+  padding-top: 40px;
+`;
+
+const Content = () => {
   return (
     <ApiConsumer>
       {context => (
-        <React.Fragment>
+        <Div>
           <h1>{context.results}</h1>
-        </React.Fragment>
+        </Div>
       )}
     </ApiConsumer>
   );
 };
 
-export default List;
+export default Content;

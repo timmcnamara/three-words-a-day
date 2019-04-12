@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import axios from "axios";
 // Default State
 export const data = {
-  word: "xxx",
-  results: []
+  word: "",
+  results: [],
+  loading: false
 };
 
 // Create Context
@@ -19,7 +20,8 @@ class ApiProvider extends Component {
 
     this.state = {
       word: "",
-      results: []
+      results: [],
+      loading: false
     };
 
     // Bind Events
@@ -48,14 +50,27 @@ class ApiProvider extends Component {
 
   // Helper Methods
   fetchDefinition = async () => {
-    let res = await axios.get("http://localhost:3001/api/words", {
-      params: {
-        word: this.state.word
-      }
-    });
-    this.setState({
-      results: res.data
-    });
+    try {
+      this.setState({
+        loading: true
+      });
+
+      const { data } = await axios.get("http://localhost:3001/api/words", {
+        params: {
+          word: this.state.word
+        }
+      });
+
+      this.setState({
+        results: data,
+        loading: false
+      });
+    } catch {
+      this.setState({
+        results: "Please try a different word",
+        loading: false
+      });
+    }
   };
 
   render() {

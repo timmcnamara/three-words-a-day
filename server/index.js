@@ -33,9 +33,11 @@ app.get("/api/words", (req, res) => {
     )
     .then(response => {
       res.setHeader("Content-Type", "application/json");
-      res.json(response.data.results[0].lexicalEntries[0].sentences[0].text);
+      res
+        .status(200)
+        .json(response.data.results[0].lexicalEntries[0].sentences[0].text);
     })
-    .catch(err => console.log("**", err));
+    .catch(err => res.status(404).send("something went wrong"));
 });
 
 app.listen(3001, () =>
