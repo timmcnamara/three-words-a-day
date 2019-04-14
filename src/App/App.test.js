@@ -1,13 +1,12 @@
 import { render, cleanup } from "react-testing-library";
 import React from "react";
-import Header from "../components/Header";
+import App from ".";
 import "jest-dom/extend-expect";
 
 afterEach(cleanup);
 
-it("renders header component", () => {
-  const { asFragment } = render(<Header />);
-
-  // run a snapshot
+// run a snapshot
+it("render App component", () => {
+  const { asFragment } = render(<App />);
   expect(asFragment()).toMatchSnapshot();
 });

@@ -15,7 +15,7 @@ exports[`render App component 1`] = `
     </svg>
   </header>
   <main
-    class="sc-EHOje ATtKl"
+    class="sc-bZQynM hzqsuX"
   >
     <h1
       class="sc-htpNat kwIifV"
@@ -33,7 +33,11 @@ exports[`render App component 1`] = `
     >
       Show
     </button>
-    <h1 />
+    <div
+      class="sc-EHOje lnZoYo"
+    >
+      <h1 />
+    </div>
   </main>
 </DocumentFragment>
 `;

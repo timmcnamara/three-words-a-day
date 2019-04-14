@@ -1,23 +1,23 @@
-import React from "react";
-import Button from "./Button";
-import TextInput from "./TextInput";
-import { ApiConsumer } from "../context/ApiContext";
+import React, { Fragment } from "react";
+import Button from "../Button";
+import SearchInput from "../SearchInput";
+import { ApiConsumer } from "../Store";
 
-const SearchContainer = () => {
+const SearchView = () => {
   return (
     <ApiConsumer>
       {context => (
-        <React.Fragment>
-          <TextInput
+        <Fragment>
+          <SearchInput
             placeholder="Enter any word"
             onChange={context.handleChange}
             onKeyDown={context.handleKeyDown}
           />
           <Button onClick={context.handleClick} text="Show" />
-        </React.Fragment>
+        </Fragment>
       )}
     </ApiConsumer>
   );
 };
 
-export default SearchContainer;
+export default SearchView;

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { dark } from "../styles/styleGuide";
+import { dark } from "../../styles/styleGuide";
 
 const InputStyled = styled.input`
   background: white;
@@ -14,7 +14,7 @@ const InputStyled = styled.input`
   min-width: 250px;
 `;
 
-const TextInput = ({ placeholder, onChange, onKeyDown }) => {
+const SearchInput = ({ placeholder, onChange, onKeyDown }) => {
   return (
     <InputStyled
       aria-label="input"
@@ -25,10 +25,10 @@ const TextInput = ({ placeholder, onChange, onKeyDown }) => {
   );
 };
 
-TextInput.propTypes = {
+SearchInput.propTypes = {
   placeholder: PropTypes.string,
   onChange: PropTypes.func,
   onKeyDown: PropTypes.func
 };
 
-export default TextInput;
+export default SearchInput;

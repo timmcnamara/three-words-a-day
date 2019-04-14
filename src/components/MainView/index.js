@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import Headline from "./Headline";
-import SeachContainer from "./SearchContainer";
+import HeadlineView from "../HeadlineView";
+import SearchView from "../SearchView";
 import styled from "styled-components";
-import Content from "./Content";
-import { ApiConsumer } from "../context/ApiContext";
+import SearchResultsView from "../SearchResultsView";
+import { ApiConsumer } from "../Store";
 import { BarLoader } from "react-spinners";
 
 const Wrapper = styled.main`
@@ -19,12 +19,12 @@ const WrapperDiv = styled.div`
   justify-content: center;
 `;
 
-class Main extends Component {
+class MainView extends Component {
   render() {
     return (
       <Wrapper>
-        <Headline title="Make a sentence with any word..." />
-        <SeachContainer />
+        <HeadlineView title="Make a sentence with any word..." />
+        <SearchView />
         <ApiConsumer>
           {context =>
             context.loading ? (
@@ -32,7 +32,7 @@ class Main extends Component {
                 <BarLoader height={6} width={100} />
               </WrapperDiv>
             ) : (
-              <Content />
+              <SearchResultsView />
             )
           }
         </ApiConsumer>
@@ -41,8 +41,8 @@ class Main extends Component {
   }
 }
 
-export default Main;
-
-Main.propTypes = {
+MainView.propTypes = {
   name: PropTypes.string
 };
+
+export default MainView;

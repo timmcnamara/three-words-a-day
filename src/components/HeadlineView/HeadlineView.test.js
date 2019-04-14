@@ -1,18 +1,18 @@
 import { render, cleanup } from "react-testing-library";
 import React from "react";
-import Headline from "../components/Headline";
+import HeadlineView from ".";
 import "jest-dom/extend-expect";
 
 afterEach(cleanup);
 
 it("renders headline component", () => {
-  const { asFragment } = render(<Headline text="hello" />);
+  const { asFragment } = render(<HeadlineView text="hello" />);
 
   // run a snapshot
   expect(asFragment()).toMatchSnapshot();
 });
 
 it("renders headline text", () => {
-  const { getByText } = render(<Headline title="hello" />);
+  const { getByText } = render(<HeadlineView title="hello" />);
   expect(getByText("hello")).toBeInTheDocument();
 });

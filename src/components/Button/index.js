@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { dark, light } from "../styles/styleGuide";
+import { dark, light } from "../../styles/styleGuide";
 
 const Btn = styled.button`
   background: ${dark};

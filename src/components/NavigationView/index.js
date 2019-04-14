@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { dark, light } from "../styles/styleGuide";
-import LogoSvg from "./LogoSvg";
+import { dark, light } from "../../styles/styleGuide";
+import Logo from "../Logo";
 
 const Nav = styled.header`
   background: ${props => (props.darkTheme ? dark : light)};
@@ -14,10 +14,10 @@ const Nav = styled.header`
   padding-left: 20px;
 `;
 
-const Header = () => (
+const NavigationView = () => (
   <Nav darkTheme>
-    <LogoSvg />
+    <Logo />
   </Nav>
 );
 
-export default Header;
+export default NavigationView;

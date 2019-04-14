@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { dark } from "../styles/styleGuide";
+import { dark } from "../../styles/styleGuide";
 
 const HeadlineStyle = styled.h1`
   color: ${dark};

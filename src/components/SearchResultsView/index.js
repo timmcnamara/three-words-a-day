@@ -1,5 +1,5 @@
 import React from "react";
-import { ApiConsumer } from "../context/ApiContext";
+import { ApiConsumer } from "../Store";
 import styled from "styled-components";
 
 const Div = styled.div`
@@ -7,7 +7,7 @@ const Div = styled.div`
   padding-top: 40px;
 `;
 
-const Content = () => {
+const SearchResultsView = () => {
   return (
     <ApiConsumer>
       {context => (
@@ -19,4 +19,4 @@ const Content = () => {
   );
 };
 
-export default Content;
+export default SearchResultsView;

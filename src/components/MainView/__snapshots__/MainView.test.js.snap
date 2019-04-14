@@ -3,7 +3,7 @@
 exports[`render SearchContainer component 1`] = `
 <DocumentFragment>
   <main
-    class="sc-bxivhb jTcDCm"
+    class="sc-ifAKCX duAdCS"
   >
     <h1
       class="sc-bdVaJa cFuNTo"
@@ -21,7 +21,11 @@ exports[`render SearchContainer component 1`] = `
     >
       Show
     </button>
-    <h1 />
+    <div
+      class="sc-bxivhb bJidCl"
+    >
+      <h1 />
+    </div>
   </main>
 </DocumentFragment>
 `;
