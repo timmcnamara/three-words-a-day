@@ -15,6 +15,8 @@ it("render button component", () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
+it("test a random function", () => {});
+
 it("renders text on button", () => {
   const { getByTestId } = render(<Button {...props} />);
   expect(getByTestId("button-global")).toHaveTextContent("hello");

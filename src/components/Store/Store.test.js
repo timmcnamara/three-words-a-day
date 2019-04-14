@@ -1,7 +1,7 @@
 import React from "react";
 import { render, cleanup } from "react-testing-library";
 import "jest-dom/extend-expect";
-import { ApiContext, ApiProvider, ApiConsumer } from "./ContextApi.js.js.js";
+import { ApiContext, ApiProvider, ApiConsumer } from ".";
 
 afterEach(cleanup);
 
