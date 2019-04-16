@@ -45,15 +45,18 @@ class ApiProvider extends Component {
 
   handleChange(e) {
     e.preventDefault();
-    this.setState({ word: e.target.value.trim() });
+    this.setState({
+      word: e.target.value.trim()
+    });
   }
 
   // Helper Methods
-  fetchDefinition = async () => {
+  // How can I decouple state from this function and import? Should I be doing this?
+  fetchDefinition = async state => {
     try {
-      this.setState({
-        loading: true
-      });
+      this.setState(prevState => ({
+        loading: !prevState.loading
+      }));
 
       const { data } = await axios.get("http://localhost:3001/api/words", {
         params: {
@@ -61,10 +64,10 @@ class ApiProvider extends Component {
         }
       });
 
-      this.setState({
+      this.setState(prevState => ({
         results: data,
-        loading: false
-      });
+        loading: !prevState.loading
+      }));
     } catch {
       this.setState({
         results: "Please try a different word",

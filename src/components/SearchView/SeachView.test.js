@@ -10,7 +10,3 @@ it("render SearchContainer component", () => {
   const { asFragment } = render(<SearchView />);
   expect(asFragment()).toMatchSnapshot();
 });
-
-it("onchange function to return ... ", () => {});
-
-it("onClick function ... ", () => {});

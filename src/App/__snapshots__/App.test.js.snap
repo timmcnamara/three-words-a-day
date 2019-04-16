@@ -36,7 +36,9 @@ exports[`render App component 1`] = `
     <div
       class="sc-EHOje lnZoYo"
     >
-      <h1 />
+      <h1
+        data-testid="results"
+      />
     </div>
   </main>
 </DocumentFragment>

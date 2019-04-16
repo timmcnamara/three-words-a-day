@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`render TextInput component 1`] = `
+exports[`<SearchInput /> render TextInput component 1`] = `
 <DocumentFragment>
   <input
     aria-label="input"

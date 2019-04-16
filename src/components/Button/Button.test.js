@@ -10,20 +10,24 @@ const props = {
 
 afterEach(cleanup);
 
-it("render button component", () => {
-  const { asFragment } = render(<Button {...props} />);
-  expect(asFragment()).toMatchSnapshot();
-});
+describe("<Button />", () => {
+  it("render button component", () => {
+    const { asFragment } = render(<Button {...props} />);
+    expect(asFragment()).toMatchSnapshot();
+  });
 
-it("renders text on button", () => {
-  const { getByTestId } = render(<Button {...props} />);
-  expect(getByTestId("button-global")).toHaveTextContent("hello");
-});
+  it("test a random function", () => {});
 
-it("calls onClick when user clicks", () => {
-  const { getByTestId } = render(<Button {...props} />);
+  it("renders text on button", () => {
+    const { getByTestId } = render(<Button {...props} />);
+    expect(getByTestId("button-global")).toHaveTextContent("hello");
+  });
 
-  getByTestId("button-global").click();
+  it("calls onClick when user clicks", () => {
+    const { getByTestId } = render(<Button {...props} />);
 
-  expect(props.onClick).toHaveBeenCalledTimes(1);
+    getByTestId("button-global").click();
+
+    expect(props.onClick).toHaveBeenCalledTimes(1);
+  });
 });

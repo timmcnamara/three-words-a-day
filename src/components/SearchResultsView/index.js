@@ -12,7 +12,7 @@ const SearchResultsView = () => {
     <ApiConsumer>
       {context => (
         <Div>
-          <h1>{context.results}</h1>
+          <h1 data-testid="results">{context.results}</h1>
         </Div>
       )}
     </ApiConsumer>

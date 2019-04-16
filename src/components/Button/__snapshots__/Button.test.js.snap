@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`render button component 1`] = `
+exports[`<Button /> render button component 1`] = `
 <DocumentFragment>
   <button
     class="sc-bdVaJa ljraLK"
