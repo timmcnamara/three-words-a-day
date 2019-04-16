@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`render SearchContainer component 1`] = `
+exports[`<MainView /> render SearchContainer component 1`] = `
 <DocumentFragment>
   <main
     class="sc-ifAKCX duAdCS"
@@ -24,7 +24,9 @@ exports[`render SearchContainer component 1`] = `
     <div
       class="sc-bxivhb bJidCl"
     >
-      <h1 />
+      <h1
+        data-testid="results"
+      />
     </div>
   </main>
 </DocumentFragment>

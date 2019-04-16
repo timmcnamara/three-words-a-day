@@ -28,7 +28,7 @@ class MainView extends Component {
         <ApiConsumer>
           {context =>
             context.loading ? (
-              <WrapperDiv>
+              <WrapperDiv data-testid="barloader">
                 <BarLoader height={6} width={100} />
               </WrapperDiv>
             ) : (

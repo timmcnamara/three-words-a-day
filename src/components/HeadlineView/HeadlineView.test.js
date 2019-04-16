@@ -5,14 +5,16 @@ import "jest-dom/extend-expect";
 
 afterEach(cleanup);
 
-it("renders headline component", () => {
-  const { asFragment } = render(<HeadlineView text="hello" />);
+describe("<HeadlineView />", () => {
+  it("renders headline component", () => {
+    const { asFragment } = render(<HeadlineView text="hello" />);
 
-  // run a snapshot
-  expect(asFragment()).toMatchSnapshot();
-});
+    // run a snapshot
+    expect(asFragment()).toMatchSnapshot();
+  });
 
-it("renders headline text", () => {
-  const { getByText } = render(<HeadlineView title="hello" />);
-  expect(getByText("hello")).toBeInTheDocument();
+  it("renders headline text", () => {
+    const { getByText } = render(<HeadlineView title="hello" />);
+    expect(getByText("hello")).toBeInTheDocument();
+  });
 });

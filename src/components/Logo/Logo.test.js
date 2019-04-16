@@ -1,17 +1,14 @@
 import { render, cleanup } from "react-testing-library";
 import React from "react";
-import NavigationView from ".";
+import Logo from ".";
 import "jest-dom/extend-expect";
 
 afterEach(cleanup);
 
-const props = {
-  darktheme: true
-};
-
-describe("<NavigationView />", () => {
+describe("<Logo/>", () => {
   it("renders navigation component", () => {
-    const { asFragment, debug } = render(<NavigationView {...props} />);
+    const { asFragment } = render(<Logo />);
+
     expect(asFragment()).toMatchSnapshot();
   });
 });
