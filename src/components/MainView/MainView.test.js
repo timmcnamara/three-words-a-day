@@ -1,4 +1,4 @@
-import { render, cleanup } from "react-testing-library";
+import { render, cleanup, waitForElement } from "react-testing-library";
 import React from "react";
 import MainView from ".";
 import "jest-dom/extend-expect";
