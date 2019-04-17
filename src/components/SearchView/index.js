@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import Button from "../Button";
 import SearchInput from "../SearchInput";
-import { ApiConsumer } from "../Store";
+import { ApiConsumer } from "../../Store";
 
 const SearchView = () => {
   return (

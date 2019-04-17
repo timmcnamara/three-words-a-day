@@ -4,7 +4,7 @@ import HeadlineView from "../HeadlineView";
 import SearchView from "../SearchView";
 import styled from "styled-components";
 import SearchResultsView from "../SearchResultsView";
-import { ApiConsumer } from "../Store";
+import { ApiConsumer } from "../../Store";
 import { BarLoader } from "react-spinners";
 
 const Wrapper = styled.main`
