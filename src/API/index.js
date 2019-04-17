@@ -1,10 +1,6 @@
 import axios from "axios";
 
-const dotenv = require("dotenv").config();
-//const { REACT_APP_DEFAULT_BASE_URL } = dotenv.parsed;
-
-//const DEFAULT_BASE_URL = REACT_APP_DEFAULT_BASE_URL;
-const DEFAULT_BASE_URL = "http://localhost:3001/api";
+const DEFAULT_BASE_URL = process.env.REACT_APP_DEFAULT_BASE_URL;
 class APIService {
   /**
    * Create a new instance of Axios
