@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
-import NavigationView from "../components/NavigationView";
-import MainView from "../components/MainView";
-import ApiProvider from "../components/Store";
+import NavigationView from "../Components/NavigationView";
+import MainView from "../Components/MainView";
+import ApiProvider from "../Store";
 
 class App extends Component {
   constructor(props) {

@@ -1,11 +1,13 @@
 import React, { Component } from "react";
-import axios from "axios";
+import APIService from "../API";
 // Default State
 export const data = {
   word: "",
   results: [],
   loading: false
 };
+
+export const apiService = new APIService();
 
 // Create Context
 export const ApiContext = React.createContext(data);
@@ -50,31 +52,26 @@ class ApiProvider extends Component {
     });
   }
 
-  // Helper Methods
-  // ### How can I decouple state from this function and import? Should I be doing this?
-  fetchDefinition = async state => {
+  async fetchDefinition() {
     try {
       this.setState(prevState => ({
         loading: !prevState.loading
       }));
 
-      const { data } = await axios.get("http://localhost:3001/api/words", {
-        params: {
-          word: this.state.word
-        }
-      });
+      const data = await apiService.fetchDefinition(this.state.word);
 
       this.setState(prevState => ({
         results: data,
         loading: !prevState.loading
       }));
-    } catch {
+    } catch (err) {
       this.setState({
         results: "Please try a different word",
         loading: false
       });
+      console.log(err);
     }
-  };
+  }
 
   render() {
     return (
