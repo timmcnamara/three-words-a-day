@@ -51,7 +51,7 @@ class ApiProvider extends Component {
   }
 
   // Helper Methods
-  // How can I decouple state from this function and import? Should I be doing this?
+  // ### How can I decouple state from this function and import? Should I be doing this?
   fetchDefinition = async state => {
     try {
       this.setState(prevState => ({

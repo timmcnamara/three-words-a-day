@@ -5,10 +5,12 @@ const axios = require("axios");
 const dotenv = require("dotenv").config();
 
 const app = express();
+const { OXFORD_API_USER, OXFORD_API_KEY } = dotenv.parsed;
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(pino);
 
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
     "Access-Control-Allow-Headers",
@@ -17,9 +19,8 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.get("/api/words", (req, res) => {
+app.get("/api/words", (req, res, next) => {
   const { word } = req.query;
-  const { OXFORD_API_USER, OXFORD_API_KEY } = dotenv.parsed;
 
   axios
     .get(
@@ -37,7 +38,20 @@ app.get("/api/words", (req, res) => {
         .status(200)
         .json(response.data.results[0].lexicalEntries[0].sentences[0].text);
     })
-    .catch(err => res.status(404).send("something went wrong"));
+    .catch(err => next(err));
+});
+
+// Error Handling
+app.use((err, req, res, next) => {
+  if (res.headersSent) {
+    return next(err);
+  }
+
+  res.status(500);
+  res.json({
+    error: err,
+    message: "Internal Server Error"
+  });
 });
 
 app.listen(3001, () =>
