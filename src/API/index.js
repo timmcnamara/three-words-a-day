@@ -26,9 +26,9 @@ class APIService {
         }
       });
 
-      return Promise.resolve(data);
+      return data;
     } catch (err) {
-      Promise.reject(err);
+      return "Please try again";
     }
   }
 }

@@ -2,7 +2,7 @@ import { render, cleanup, waitForElement } from "react-testing-library";
 import React from "react";
 import MainView from ".";
 import "jest-dom/extend-expect";
-import { ApiContext } from "../Store";
+import { ApiContext } from "../../Store";
 
 afterEach(cleanup);
 

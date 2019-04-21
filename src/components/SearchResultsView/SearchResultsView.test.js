@@ -1,7 +1,7 @@
 import React from "react";
 import { render, cleanup } from "react-testing-library";
 import "jest-dom/extend-expect";
-import { ApiContext } from "../Store";
+import { ApiContext } from "../../Store";
 import SearchResultsView from ".";
 
 afterEach(cleanup);

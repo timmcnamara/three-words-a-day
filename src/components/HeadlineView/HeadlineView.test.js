@@ -1,7 +1,7 @@
-import { render, cleanup } from "./node_modules/react-testing-library";
-import React from "./node_modules/react";
+import { render, cleanup } from "react-testing-library";
+import React from "react";
 import HeadlineView from ".";
-import "./node_modules/jest-dom/extend-expect";
+import "jest-dom/extend-expect";
 
 afterEach(cleanup);
 
