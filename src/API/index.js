@@ -1,13 +1,13 @@
 import axios from "axios";
 
-const DEFAULT_BASE_URL = process.env.REACT_APP_DEFAULT_BASE_URL;
+//const DEFAULT_BASE_URL = process.env.REACT_APP_DEFAULT_BASE_URL;
 class APIService {
   /**
    * Create a new instance of Axios
    * @param {String} baseURL
    * @param {*} options - AxiosConfig
    */
-  constructor(baseURL = DEFAULT_BASE_URL, options = {}) {
+  constructor(baseURL = "http://localhost:3001/api", options = {}) {
     this.request = axios.create({
       ...options,
       baseURL
@@ -19,8 +19,13 @@ class APIService {
    * @param {String} word
    */
   async fetchDefinition(word) {
+    let baseURL = process.env.REACT_APP_DEFAULT_BASE_URL;
+    const instance = axios.create({
+      baseURL
+    });
+
     try {
-      const { data } = await this.request.get("/words", {
+      const { data } = await instance.get("/words", {
         params: {
           word: word
         }

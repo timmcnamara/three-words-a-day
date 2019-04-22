@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import APIService from "../API";
+import { getDefinition } from "../API/functional";
+
 // Default State
 export const data = {
   word: "",
@@ -58,7 +60,8 @@ class ApiProvider extends Component {
         loading: !prevState.loading
       }));
 
-      const data = await apiService.fetchDefinition(this.state.word);
+      //const data = await apiService.fetchDefinition(this.state.word);
+      const data = await getDefinition(this.state.word);
 
       this.setState(prevState => ({
         results: data,
